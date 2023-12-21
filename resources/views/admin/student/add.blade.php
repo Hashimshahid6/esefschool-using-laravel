@@ -62,6 +62,8 @@
                                     <input type="password" class="form-control" name="password" required placeholder="Password">
                                 </div>
                             </div>
+                            <div>
+                            </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
