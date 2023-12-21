@@ -7,10 +7,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Admin List</h1>
+            <h1>Student List</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{url('admin/admin/add')}}" class="btn btn-primary">Add New Admin</a>
+            <a href="{{url('admin/student/add')}}" class="btn btn-primary">Add New Student</a>
           </div>
         </div>
         <div class="row mb-2">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group col-md-3">
                       <button type="submit" class="btn btn-primary">Search</button>
-                      <a href="{{url('admin/admin/list')}}" class="btn btn-success">Reset</a>
+                      <a href="{{url('admin/student/list')}}" class="btn btn-success">Reset</a>
                     </div>
                   </div>
                 </div>
@@ -67,7 +67,7 @@
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Admin List</h3>
+                <h3 class="card-title">Students List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -83,8 +83,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {{dd($get_Record)}}
-                    @foreach($get_Record as $value)
+                    {{dd($getRecord)}}
+                    @foreach($getRecord as $value)
                       <tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
@@ -92,9 +92,9 @@
                         <td>{{ $value->user_type}}</td>
                         <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
                         <td>
-                            <a href="{{ url('admin/admin/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
-                            <a href="{{ url('admin/admin/delete/'.$value->id) }}" class="btn btn-danger">Delete</a>
-                            <a href="{{ url('admin/admin/change-password/'.$value->id) }}" class="btn btn-warning">Change Password</a>
+                            <a href="{{ url('admin/student/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ url('admin/student/delete/'.$value->id) }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ url('admin/student/change-password/'.$value->id) }}" class="btn btn-warning">Change Password</a>
                         </td>
                       </tr>
                     @endforeach

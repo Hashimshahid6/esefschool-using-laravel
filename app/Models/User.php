@@ -71,12 +71,12 @@ class User extends Authenticatable
     }
     public function getStudent(){
         $query = self::select('users.*')
-        ->where('user_type', 3)
-        ->where('is_deleted', '=' , 0);
+        ->where('users.user_type', 3)
+        ->where('users.is_deleted', '=' , 0);
         if(!empty(Request::get('email'))){
-            $query->where('email', 'lile', '%' , (Request::get('email'). '%'));
+            $query->where('email', 'like', '%' , (Request::get('email'). '%'));
         }
-        $query = $query->orderBy('id', 'desc')
+        $query = $query->orderBy('users.id', 'desc')
         ->paginate(5);
         return $query;
     }
