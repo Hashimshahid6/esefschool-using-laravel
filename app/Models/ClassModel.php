@@ -31,7 +31,7 @@ class ClassModel extends Model
         ->join('users', 'users.id', 'class.created_by')
         ->where('class.is_deleted', 0)
         ->where('class.status', 0)
-        ->orderBy('class.name', 'ASC')
+        ->orderBy('class.name', 'asc')
         ->get();
         return $record;
     }
