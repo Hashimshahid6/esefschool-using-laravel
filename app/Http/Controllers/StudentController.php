@@ -51,6 +51,7 @@ class StudentController extends Controller
         $student->status = request()->status;
         $student->email = request()->email;
         $student->password = Hash::make(request()->password);
+        $student->user_tye = 3;
         $student->save();
         return redirect('admin/student/list')->with('success', 'Student Successfully Added');
     }
